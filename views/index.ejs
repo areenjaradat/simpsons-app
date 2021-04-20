@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layout/head.ejs') %>
+    <title>HOME</title>
+</head>
+<body>
+    <header>
+        <%- include('layout/header.ejs') %>
+    </header>
+    <main>
+        <section>
+            <%searchrResults.forEach(simpsons=>{%>
+                <div>
+                <p><%=simpsons.quote%></p>
+                <p><%=simpsons.character%></p>
+               <img src="<%=simpsons.image%>" alt="" style="float: <%=simpsons.characterDirection%>">
+               <form action="/addFav" method="post">
+                <input type="hidden" name="quote" value="<%=simpsons.quote%>">
+                <input type="hidden" name="character" value="<%=simpsons.character%>">
+                <input type="hidden" name="image" value="<%=simpsons.image%>">
+                <input type="hidden" name="characterDirection" value="<%=simpsons.characterDirection%>">
+                <button type="submit">Add to favorite</button>
+            </form>
+        </div>
+                <%})%>
+        </section>
+    </main>
+</body>
+</html>

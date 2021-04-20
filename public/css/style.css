@@ -1,0 +1,47 @@
+#headerimg{
+    width: 20%;
+}
+header{
+    background-color: rgb(50, 143, 143);
+}
+body{
+    background-color: aquamarine;
+}
+section{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(50, 143, 143);
+    width: 40%;
+    margin: 5px;
+    
+}
+div img{
+    width: 20%;
+}
+div button{
+background-color: rgb(50, 143, 143);
+}
+nav{
+    display: grid;
+grid-template-columns: 1fx,1fx,1fx,1fx,1fx,1fx;
+grid-template-rows: 1fx;  
+}
+nav img{
+    grid-column-start: 1;
+  grid-column-end: 2;
+  
+}
+nav ul {
+    display: inline-block;
+    grid-column-start: 6;
+    grid-column-end: 7;
+   
+}
+nav ul li{
+    display: inline;
+}

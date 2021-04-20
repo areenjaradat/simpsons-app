@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layout/head.ejs') %>
+    <title>facorite</title>
+</head>
+<body>
+    <header>
+        <%- include('layout/header.ejs') %>
+    </header>
+    <main>
+        <section>
+            <%searchrResults.forEach(simpsons=>{%>
+                <div>
+                <p><%=simpsons.quote%></p>
+                <p><%=simpsons.character%></p>
+               <img src="<%=simpsons.image%>" alt="" id="fav">
+              <a href='/favorite-quotes/<%=simpsons.id%>'>Details</a>
+            </div>
+                <%})%>
+        </section>
+    </main>
+</body>
+</html>

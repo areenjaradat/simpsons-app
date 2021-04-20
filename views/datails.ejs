@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layout/head.ejs') %>
+    <title>details</title>
+</head>
+<body>
+    <header>
+        <%- include('layout/header.ejs') %>
+    </header>
+    <main>
+        <section>
+            <%searchrResults.forEach(simpsons=>{%>
+                <div>
+                <p><%=simpsons.quote%></p>
+                <p><%=simpsons.character%></p>
+               <img src="<%=simpsons.image%>" alt="">
+              <form action="/favorite-quotes/<%=simpsons.id%>?_method=PUT" method="post">
+                <input type="text" name="quote" value="<%=simpsons.quote%>">
+                <br>
+                <input type="text" name="character" value="<%=simpsons.character%>">
+                <br>
+                <input type="text" name="image" value="<%=simpsons.image%>">
+                <br>
+                <input type="text" name="characterDirection" value="<%=simpsons.characterDirection%>">
+                <br>
+                <button type="submit">UPDATE</button>
+            </form>
+            <form action="/favorite-quotes/<%=simpsons.id%>?_method=DELETE" method="post">
+                <button type="submit">DELETE</button>
+            </form>
+        </div>
+                <%})%>
+        </section>
+    </main>
+</body>
+</html>
